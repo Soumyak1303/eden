@@ -3,6 +3,8 @@ import { Component, Fragment } from "react";
 import InlineCombiner from "../../component/InlineCombiner/InlineCombiner";
 import "./ElementRendered.css";
 import Card from "../../component/Card/Card";
+import { connect } from "react-redux";
+import { changeValue } from "../../store/actions/layoutActions";
 
 class ElementRenderer extends Component {
   render() {
@@ -32,9 +34,9 @@ class ElementRenderer extends Component {
               elementId={key}
               elementType={elementProps.elementType}
               elementConfig={elementProps.elementConfig}
-              //value={this.props.userData[key]}
+              value={this.props.userData[key]}
               label={elementProps.label}
-              //onChangeHandler={this.props.changeValue}
+              onChangeHandler={this.props.changeValue}
             />
           );
       }
@@ -44,4 +46,10 @@ class ElementRenderer extends Component {
   }
 }
 
-export default ElementRenderer;
+const mapStateToProps = (state) => {
+  return {
+    userData: state.layout.userData,
+  };
+};
+
+export default connect(mapStateToProps, { changeValue })(ElementRenderer);
