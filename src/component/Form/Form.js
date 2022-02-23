@@ -6,7 +6,7 @@ const Form = (props) => {
     <div className="form" onSubmit={props.onSubmit}>
       <form onSubmit={props.submitHandler}>
         {props.elements}
-        <Button>Create Workspace</Button>
+        <Button>{props.submitButtonLabel}</Button>
       </form>
     </div>
   );

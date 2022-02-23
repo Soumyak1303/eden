@@ -6,3 +6,15 @@ h2.subheading {
   font-size: 1rem;
   font-weight: lighter;
 }
+
+.done {
+  background-image: url(/src/assets/images/setupDone.png);
+  flex-grow: 1;
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-size: contain;
+  height: 60px;
+  width: 60px;
+  margin-left: auto;
+  margin-right: auto;
+}
