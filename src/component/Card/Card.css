@@ -1,0 +1,42 @@
+.card {
+  padding: 10px 25px;
+  height: 200px;
+  border: 2px solid lightgrey;
+  border-radius: 6px;
+  margin: 20px;
+  max-width: 200px;
+}
+
+.card h3 {
+  text-align: left;
+}
+
+.card p {
+  text-align: left;
+  color: rgb(145, 148, 151);
+}
+
+.card:hover,
+.card.active {
+  border: 2px solid #805dfb;
+}
+
+.myselfIcon {
+  background-image: url(/src/assets/images/myselfIcon.png);
+  flex-grow: 1;
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-size: contain;
+  height: 45px;
+  width: 45px;
+}
+
+.teamIcon {
+  background-image: url(/src/assets/images/teamIcon.png);
+  flex-grow: 1;
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-size: contain;
+  height: 45px;
+  width: 45px;
+}

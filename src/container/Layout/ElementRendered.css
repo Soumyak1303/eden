@@ -1,0 +1,14 @@
+.staticLabel {
+  display: block;
+  box-sizing: border-box;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  outline: none;
+  background-color: #f3f3f4;
+  height: 50px;
+  padding: 14px 16px;
+  border-color: transparent;
+  margin: 14px 0;
+  font-weight: 400;
+  color: #ababab;
+}

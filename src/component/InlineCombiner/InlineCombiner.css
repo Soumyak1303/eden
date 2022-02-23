@@ -1,0 +1,15 @@
+.form-field-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+.inlineCombiner .label {
+  font-weight: 400;
+  display: block;
+  margin-bottom: 8px;
+  text-align: left;
+}
+
+.form-field-group.usageType {
+  justify-content: center;
+}
