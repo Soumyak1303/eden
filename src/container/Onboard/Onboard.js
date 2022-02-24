@@ -11,6 +11,15 @@ import { connect } from "react-redux";
 class Onboard extends Component {
   state = {
     current: 1,
+    validations: {
+      fullName: {
+        required: true,
+      },
+      displayName: { required: true },
+      workspaceName: { required: true },
+      workspaceURL: null,
+      usageType: { required: true },
+    },
   };
 
   onStepClick = (e) => {
@@ -19,7 +28,30 @@ class Onboard extends Component {
 
   onSubmitHandler = (event) => {
     event.preventDefault();
-    alert("submited");
+    alert("Done!");
+  };
+
+  checkValidity = (value, rules) => {
+    let isValid = true;
+
+    if (!rules) {
+      return true;
+    }
+    if (rules.required) {
+      isValid = value.trim() !== "" && isValid;
+    }
+
+    return isValid;
+  };
+
+  isFormValid = () => {
+    const fields = this.state.validations;
+    for (let field in fields) {
+      if (!this.checkValidity(this.props.userData[field], fields[field])) {
+        return false;
+      }
+    }
+    return true;
   };
 
   render() {
@@ -27,13 +59,26 @@ class Onboard extends Component {
       <ElementRenderer elements={onBoardView[`step${this.state.current}`]} />
     );
     const size = Object.keys(onBoardView).length;
+    const isFormValid = this.isFormValid();
     const isLastStep = size === this.state.current ? true : false;
     let heading = labels[`STEP${this.state.current}_HEADING`];
-    const subHeading = labels[`STEP${this.state.current}_SUBHEADING`];
+    let subHeading = labels[`STEP${this.state.current}_SUBHEADING`];
 
-    heading = isLastStep
-      ? heading.replace("{name}", this.props.userData.fullName)
-      : heading;
+    if (isLastStep) {
+      if (isFormValid) {
+        heading = heading.replace("{name}", this.props.userData.fullName);
+      } else {
+        heading = null;
+        subHeading = labels[`STEP${this.state.current}_INVALID_SUBHEADING`];
+      }
+    }
+
+    let headings = (
+      <Fragment>
+        {heading ? <h1 className="heading">{heading}</h1> : null}
+        <h2 className="subheading">{subHeading}</h2>
+      </Fragment>
+    );
 
     return (
       <Fragment>
@@ -43,15 +88,13 @@ class Onboard extends Component {
           current={this.state.current}
           onClick={this.onStepClick}
         />
-
-        {isLastStep ? <div className="done"></div> : null}
-        <h1 className="heading">{heading}</h1>
-        <h2 className="subheading">{subHeading}</h2>
-
+        {isLastStep && isFormValid ? <div className="done"></div> : null}
+        {headings}
         <Form
           elements={elements}
           onSubmit={this.onSubmitHandler}
           submitButtonLabel={isLastStep ? "Launch Eden" : "Create Workspace"}
+          isFormValid={isFormValid}
         />
       </Fragment>
     );

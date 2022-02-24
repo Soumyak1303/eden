@@ -6,7 +6,7 @@ const Form = (props) => {
     <div className="form" onSubmit={props.onSubmit}>
       <form onSubmit={props.submitHandler}>
         {props.elements}
-        <Button>{props.submitButtonLabel}</Button>
+        <Button disabled={!props.isFormValid}>{props.submitButtonLabel}</Button>
       </form>
     </div>
   );

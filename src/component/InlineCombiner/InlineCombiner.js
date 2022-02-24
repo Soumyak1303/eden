@@ -2,7 +2,12 @@ import ElementRenderer from "../../container/Layout/ElementRendered";
 import "./InlineCombiner.css";
 
 const InlineCombiner = (props) => {
-  const elements = <ElementRenderer elements={props.elementProps.children} />;
+  const elements = (
+    <ElementRenderer
+      elements={props.elementProps.children}
+      parent={props.elementId}
+    />
+  );
   return (
     <div className="inlineCombiner">
       {props.elementProps.label ? (

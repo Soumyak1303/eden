@@ -26,7 +26,14 @@ class ElementRenderer extends Component {
           );
           break;
         case "card":
-          element = <Card elementId={key} />;
+          element = (
+            <Card
+              elementId={key}
+              onClickHandler={this.props.changeValue}
+              parent={this.props.parent}
+              selected={key === this.props.userData[this.props.parent]}
+            />
+          );
           break;
         default:
           element = (

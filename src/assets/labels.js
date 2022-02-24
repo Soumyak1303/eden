@@ -16,3 +16,6 @@ export const STEP3_SUBHEADING =
   "We'll streamline your setup experience accordingly.";
 export const STEP4_SUBHEADING =
   "You have completed onboarding, you can start using Eden!";
+
+export const STEP4_INVALID_SUBHEADING =
+  "Please complete the mandatory details to proceed.";
