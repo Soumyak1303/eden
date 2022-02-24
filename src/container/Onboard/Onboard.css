@@ -1,9 +1,8 @@
 h1.heading {
-  font-weight: 400;
+  font-weight: 500;
 }
 
 h2.subheading {
-  font-size: 1rem;
   font-weight: lighter;
 }
 
@@ -17,4 +16,26 @@ h2.subheading {
   width: 60px;
   margin-left: auto;
   margin-right: auto;
+}
+
+@media (max-width: 800px) {
+  .heading {
+    font-size: 1.8em;
+  }
+  .subheading {
+    font-size: 0.8em;
+  }
+}
+
+@media (max-width: 500px) {
+  .heading {
+    font-size: 1em;
+  }
+  .subheading {
+    font-size: 0.7em;
+  }
+  .done {
+    height: 45px;
+    width: 45px;
+  }
 }

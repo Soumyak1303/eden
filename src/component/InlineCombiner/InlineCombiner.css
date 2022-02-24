@@ -13,3 +13,9 @@
 .form-field-group.usageType {
   justify-content: center;
 }
+
+@media (max-width: 500px) {
+  .inlineCombiner .label {
+    font-size: x-small;
+  }
+}

@@ -2,7 +2,6 @@
   padding: 12px 0;
   position: relative;
   width: 100%;
-  margin-right: 8px;
   border: 1px solid transparent;
 }
 
@@ -39,4 +38,15 @@
 .InputElement.url {
   border-top-left-radius: 0px;
   border-bottom-left-radius: 0px;
+}
+
+@media (max-width: 500px) {
+  .InputElement {
+    font-size: x-small;
+    height: 30px;
+  }
+
+  .Label {
+    font-size: small;
+  }
 }

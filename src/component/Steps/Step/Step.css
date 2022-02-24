@@ -84,3 +84,20 @@
 .stepper-item:last-child::after {
   content: none;
 }
+
+@media (max-width: 500px) {
+  .stepper-item .step-counter {
+    width: 20px;
+    height: 20px;
+    font-size: xx-small;
+  }
+
+  .stepper-item::after,
+  .stepper-item::before,
+  .stepper-item.active::after,
+  .stepper-item.active::before,
+  .stepper-item.completed::after,
+  .stepper-item.completed::before {
+    top: 10px;
+  }
+}

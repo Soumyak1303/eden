@@ -8,7 +8,15 @@
   height: 50px;
   padding: 14px 16px;
   border-color: transparent;
-  margin: 14px 0;
+  margin: 13px 0;
   font-weight: 400;
   color: #ababab;
+}
+
+@media (max-width: 500px) {
+  .staticLabel {
+    font-size: x-small;
+    height: 30px;
+    padding: 10px 10px;
+  }
 }

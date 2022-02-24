@@ -1,6 +1,13 @@
 .form {
   margin: 50px;
-  width: 45%;
+  width: 100%;
+  max-width: 350px;
   margin-left: auto;
   margin-right: auto;
+}
+
+@media (max-width: 500px) {
+  .form {
+    margin: 20px 0px;
+  }
 }
