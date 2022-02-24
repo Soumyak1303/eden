@@ -40,3 +40,9 @@
   height: 45px;
   width: 45px;
 }
+
+@media (min-width: 1000px) and (min-height: 700px) {
+  .card {
+    font-size: x-small;
+  }
+}
