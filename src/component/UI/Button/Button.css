@@ -17,9 +17,41 @@
   cursor: not-allowed;
 }
 
+.btn-container .tooltip {
+  visibility: hidden;
+  color: #6d6b6b;
+  padding: 10px 4px;
+  margin-top: 10px;
+  display: block;
+  border: 1px solid #e2e0e0;
+  border-radius: 6px;
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.btn-container .tooltip i {
+  border: 1px solid #e2e0e0;
+  border-radius: 50%;
+  padding: 0px 8px;
+  margin: 10px;
+}
+
+.btn-container.disabled:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
 @media (max-width: 500px) {
   .Button {
     font-size: x-small;
     height: 30px;
+  }
+
+  .btn-container .tooltip {
+    font-size: x-small;
+  }
+
+  .btn-container .tooltip i {
+    padding: 0 5px;
   }
 }
